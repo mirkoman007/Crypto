@@ -5,4 +5,10 @@
     <RootNamespace>Crypto_Web_API</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="order.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -30,7 +30,7 @@ namespace Crypto_Web_API.Controllers
             {
                 XmlDocument doc = xmlOrder.OwnerDocument;
                 doc.AppendChild(xmlOrder);
-                doc.Schemas.Add("", "order.xsd");
+                doc.Schemas.Add("http://schemas.datacontract.org/2004/07/Crypto_Web_API.Models", "order.xsd");
 
                 ValidationEventHandler validation = new ValidationEventHandler(XmlValidation);
 
