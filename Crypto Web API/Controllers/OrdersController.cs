@@ -1,4 +1,5 @@
-﻿using Crypto_Web_API.Models;
+﻿using Commons.Xml.Relaxng;
+using Crypto_Web_API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,8 +24,8 @@ namespace Crypto_Web_API.Controllers
         }
 
         private bool error = false;
-        [HttpPost]
-        public void Post(XmlElement xmlOrder)
+        [HttpPost("xsd")]
+        public void PostXsd(XmlElement xmlOrder)
         {
             try
             {
@@ -59,6 +60,39 @@ namespace Crypto_Web_API.Controllers
         private void XmlValidation(object sender, ValidationEventArgs e)
         {
             error = true;
+        }
+
+
+        [HttpPost("rng")]
+        public void PostRng(XmlElement xmlOrder)
+        {
+            XmlReader instance = new XmlNodeReader(xmlOrder);
+            XmlReader grammar = new XmlTextReader("order.rng");
+            using RelaxngValidatingReader reader = new RelaxngValidatingReader(instance, grammar);
+            try
+            {
+                while (!reader.EOF)
+                {
+                    reader.Read();
+                }
+
+                instance = new XmlNodeReader(xmlOrder);
+                instance.ReadToFollowing("Cryptocurrency");
+                string cryptocurrency = instance.ReadElementContentAsString();
+                instance.ReadToFollowing("Price");
+                string price = instance.ReadElementContentAsString();
+                instance.ReadToFollowing("Amount");
+                string amount = instance.ReadElementContentAsString();
+
+                Order newOrder = new Order(cryptocurrency, float.Parse(price), float.Parse(amount));
+                Startup.Orders.Add(newOrder);
+            }
+            catch (Exception ex)
+            {
+                Response.ContentType =ex.Message;
+                Response.StatusCode = StatusCodes.Status400BadRequest;
+            }
+
         }
     }
 }

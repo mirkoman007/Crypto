@@ -1,0 +1,11 @@
+﻿<element name="Order" xmlns="http://relaxng.org/ns/structure/1.0">
+	<element name="Cryptocurrency">
+		<text/>
+	</element>
+	<element name="Price">
+		<text/>
+	</element>
+	<element name="Amount">
+		<text/>
+	</element>
+</element>
