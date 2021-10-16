@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto Web API", "Crypto Web API\Crypto Web API.csproj", "{A7CC1A3A-43C4-4BF5-ACFD-0D62B7983375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crypto Web API", "Crypto Web API\Crypto Web API.csproj", "{A7CC1A3A-43C4-4BF5-ACFD-0D62B7983375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crypto SOAP", "Crypto SOAP\Crypto SOAP.csproj", "{77AABB92-691A-4635-BEA5-077128CB3605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A7CC1A3A-43C4-4BF5-ACFD-0D62B7983375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7CC1A3A-43C4-4BF5-ACFD-0D62B7983375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7CC1A3A-43C4-4BF5-ACFD-0D62B7983375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AABB92-691A-4635-BEA5-077128CB3605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AABB92-691A-4635-BEA5-077128CB3605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AABB92-691A-4635-BEA5-077128CB3605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AABB92-691A-4635-BEA5-077128CB3605}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
