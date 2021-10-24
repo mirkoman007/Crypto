@@ -1,0 +1,10 @@
+﻿@using Crypto_WebApplication.Models
+@{
+    Markets markets = ViewBag.markets as Markets;
+}
+
+
+@foreach (var item in markets.Data.Markets)
+{
+    <p>@item.BaseSymbol/@item.QuoteSymbol - @item.SourceName</p>
+}

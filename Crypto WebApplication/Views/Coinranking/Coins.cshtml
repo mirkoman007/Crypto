@@ -1,0 +1,10 @@
+﻿@using Crypto_WebApplication.Models
+@{
+    Coins coins = ViewBag.coins as Coins;
+}
+
+
+@foreach (var item in coins.Data.Coins)
+{
+    <p>@item.Name</p>
+}

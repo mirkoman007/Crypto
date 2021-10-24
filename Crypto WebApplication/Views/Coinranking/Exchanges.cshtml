@@ -1,0 +1,10 @@
+﻿@using Crypto_WebApplication.Models
+@{
+    Exchanges exchanges = ViewBag.exchanges as Exchanges;
+}
+
+
+@foreach (var item in exchanges.Data.Exchanges)
+{
+    <p>@item.Name</p>
+}

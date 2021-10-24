@@ -1,0 +1,12 @@
+﻿@using Crypto_WebApplication.Models
+@{
+    Stats stats = ViewBag.stats as Stats;
+}
+
+
+@stats.Status
+<p>@stats.Data.Total24HVolume</p>
+<p>@stats.Data.TotalCoins</p>
+<p>@stats.Data.TotalExchanges</p>
+<p>@stats.Data.TotalMarketCap</p>
+<p>@stats.Data.TotalMarkets</p>
