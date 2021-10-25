@@ -4,7 +4,27 @@
 }
 
 
-@foreach (var item in coins.Data.Coins)
-{
-    <p>@item.Name</p>
-}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Cryptocurrency</th>
+            <th scope="col">Price</th>
+            <th scope="col">Market cap</th>
+            <th scope="col">24h</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in coins.Data.Coins)
+        {
+            <tr>
+                <th scope="row">@item.Rank</th>
+                <td><img src="@item.IconUrl" width="26" height="26" /> @Html.ActionLink(item.Name, "Coin", "Coinranking", new { id = item.Id })</td>
+                <td>$ @item.Price</td>
+                <td>$ @item.MarketCap</td>
+                <td>@item.Change%</td>
+            </tr>
+        }
+    </tbody>
+</table>

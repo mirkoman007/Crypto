@@ -4,9 +4,13 @@
 }
 
 
-@stats.Status
-<p>@stats.Data.Total24HVolume</p>
-<p>@stats.Data.TotalCoins</p>
-<p>@stats.Data.TotalExchanges</p>
-<p>@stats.Data.TotalMarketCap</p>
-<p>@stats.Data.TotalMarkets</p>
+<div class="card text-white bg-info mb-3">
+    <div class="card-header">Stats</div>
+    <div class="card-body">
+        <p>Total coins: @stats.Data.TotalCoins</p>
+        <p>Total markets: @stats.Data.TotalMarkets</p>
+        <p>Total exchanges: @stats.Data.TotalExchanges</p>
+        <p>Total market cap: $@stats.Data.TotalMarketCap</p>
+        <p>Total 24h volume: $@stats.Data.Total24HVolume.ToString("0.00")</p>
+    </div>
+</div>

@@ -4,7 +4,26 @@
 }
 
 
-@foreach (var item in exchanges.Data.Exchanges)
-{
-    <p>@item.Name</p>
-}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Exchanges</th>
+            <th scope="col">24h trade volume</th>
+            <th scope="col">Markets</th>
+            <th scope="col">Market share</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in exchanges.Data.Exchanges)
+        {
+            <tr>
+                <th scope="row">@item.Rank</th>
+                <td><img src="@item.IconUrl" width="26" height="26" /> <a href="@item.WebsiteUrl">@item.Name</a></td>
+                <td>$ @item.Volume.ToString("0.00")</td>
+                <td>@item.NumberOfMarkets</td>
+                <td>@item.MarketShare.ToString("0.00")%</td>
+            </tr>
+        }
+    </tbody>
+</table>

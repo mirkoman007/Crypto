@@ -38,8 +38,8 @@ namespace Crypto_WebApplication.Models
         public long? Volume { get; set; }
         public long? MarketCap { get; set; }
         public string Price { get; set; }
-        public double CirculatingSupply { get; set; }
-        public double TotalSupply { get; set; }
+        public double? CirculatingSupply { get; set; }
+        public double? TotalSupply { get; set; }
         public bool ApprovedSupply { get; set; }
         public long FirstSeen { get; set; }
         public long ListedAt { get; set; }

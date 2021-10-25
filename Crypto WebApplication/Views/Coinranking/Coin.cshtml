@@ -3,4 +3,35 @@
     Coin coin = ViewBag.coin as Coin;
 }
 
-@coin.Data.Coin.Slug
+
+
+
+<div class="container">
+    <p><img src="@coin.Data.Coin.IconUrl" width="26" height="26" /> @coin.Data.Coin.Name</p>
+    <div class="row">
+        <div class="col">
+            <p>
+                Rank: #@coin.Data.Coin.Rank
+                <br>
+                Price: $@coin.Data.Coin.Price
+                @if (coin.Data.Coin.Change >= 0)
+                {
+                    <span class="badge badge-success">@coin.Data.Coin.Change%</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger">@coin.Data.Coin.Change%</span>
+                }
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                24h volume: $@coin.Data.Coin.Volume
+                <br />
+                Market cap: $@coin.Data.Coin.MarketCap
+                <br />
+                All-time high (daily avg.): $@coin.Data.Coin.AllTimeHigh.Price
+            </p>
+        </div>
+    </div>
+</div>
