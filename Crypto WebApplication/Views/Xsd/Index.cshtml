@@ -1,0 +1,36 @@
+﻿@using Crypto_WebApplication.Models.ValidationModel
+@model Order
+@{ 
+    ViewData["Title"] = "XSD validation";
+
+}
+
+<form asp-action="Validate" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Cryptocurrency">Cryptocurrency</label>
+        <input type="text" class="form-control" asp-for="Cryptocurrency" placeholder="Bitcoin" required>
+        <div class="invalid-feedback">
+            Please enter name.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price">Price</label>
+        <input type="text" class="form-control" asp-for="Price" placeholder="5,4" required>
+        <div class="invalid-feedback">
+            Please enter price.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Amount">Amount</label>
+        <input type="number" class="form-control" asp-for="Amount" placeholder="1000" required>
+        <div class="invalid-feedback">
+            Please enter amount.
+        </div>
+    </div>
+
+    <hr class="mb-4">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Validate</button>
+</form>

@@ -1,0 +1,14 @@
+﻿@{
+    bool status = (Boolean)ViewBag.status;
+    ViewData["Title"] = "XSD validation - status";
+}
+
+
+@if (status)
+{
+    <p>XSD validation passed successfully</p>
+}
+else
+{
+    <p style="color:red;">Error: Validation failed</p>
+}

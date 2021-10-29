@@ -1,0 +1,8 @@
+﻿@using System.Xml;
+
+@{
+    XmlElement searchResult = ViewBag.searchResult as XmlElement;
+    ViewData["Title"] = "SOAP result";
+}
+
+@searchResult.OuterXml

@@ -1,0 +1,14 @@
+﻿@{
+    bool status = (Boolean)ViewBag.status;
+    ViewData["Title"] = "RNG validation status";
+}
+
+
+@if (status)
+{
+<p>RNG validation passed successfully</p>
+}
+else
+{
+<p style="color:red;">Error: Validation failed</p>
+}
