@@ -35,7 +35,7 @@ namespace Crypto_SOAP
 
 
             XmlDocument xmlRez = new XmlDocument();
-            xmlRez.AppendChild(xmlRez.CreateElement("ArrayOfCoin"));
+            xmlRez.AppendChild(xmlRez.CreateElement("ArrayOfCoin", "http://schemas.datacontract.org/2004/07/Crypto_SOAP.Models"));
             foreach (XmlNode item in xmlNodeList)
             {
                 xmlRez.DocumentElement.AppendChild(xmlRez.ImportNode(item, true));
