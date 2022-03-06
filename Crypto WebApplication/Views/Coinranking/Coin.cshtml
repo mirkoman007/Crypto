@@ -14,7 +14,8 @@
                 Rank: #@coin.Data.Coin.Rank
                 <br>
                 Price: $@coin.Data.Coin.Price
-                @if (coin.Data.Coin.Change >= 0)
+                @*@if (coin.Data.Coin.Change >= 0)*@
+                @if (true)
                 {
                     <span class="badge badge-success">@coin.Data.Coin.Change%</span>
                 }

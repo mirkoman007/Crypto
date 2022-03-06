@@ -45,14 +45,14 @@ namespace Crypto_WebApplication.Models
         public long NumberOfExchanges { get; set; }
         public string Type { get; set; }
         public long Volume { get; set; }
-        public long MarketCap { get; set; }
+        public string MarketCap { get; set; }
         public string Price { get; set; }
         public double? CirculatingSupply { get; set; }
         public double? TotalSupply { get; set; }
         public bool ApprovedSupply { get; set; }
         public long FirstSeen { get; set; }
         public long ListedAt { get; set; }
-        public double Change { get; set; }
+        public string Change { get; set; }
         public long Rank { get; set; }
         public List<string> History { get; set; }
         public AllTimeHigh AllTimeHigh { get; set; }
@@ -81,8 +81,8 @@ namespace Crypto_WebApplication.Models
         public string Base { get; set; }
         public long TotalMarkets { get; set; }
         public long TotalExchanges { get; set; }
-        public double TotalMarketCap { get; set; }
-        public double Total24HVolume { get; set; }
+        public string TotalMarketCap { get; set; }
+        public string Total24HVolume { get; set; }
     }
 
 }

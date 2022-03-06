@@ -20,7 +20,7 @@
         {
             <tr>
                 <th scope="row">@item.Rank</th>
-                <td><img src="@item.IconUrl" width="26" height="26" /> @Html.ActionLink(item.Name, "Coin", "Coinranking", new { id = item.Id })</td>
+                <td><img src="@item.IconUrl" width="26" height="26" /> @Html.ActionLink(item.Name, "Coin", "Coinranking", new { uuid = item.Uuid })</td>
                 <td>$ @item.Price</td>
                 <td>$ @item.MarketCap</td>
                 <td>@item.Change%</td>

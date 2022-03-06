@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Crypto_WebApplication.Models
@@ -19,17 +20,17 @@ namespace Crypto_WebApplication.Models
 
     public partial class Exchange
     {
-        public long Id { get; set; }
         public string Uuid { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
         public Uri IconUrl { get; set; }
         public bool Verified { get; set; }
-        public long LastTickerCreatedAt { get; set; }
+        public bool Recommended { get; set; }
         public long NumberOfMarkets { get; set; }
-        public double Volume { get; set; }
-        public string WebsiteUrl { get; set; }
+        public Uri CoinrankingUrl { get; set; }
+        public string BtcPrice { get; set; }
         public long Rank { get; set; }
-        public double MarketShare { get; set; }
+        [JsonPropertyName("24hVolume")]
+        public string Volume { get; set; }
+        public string Price { get; set; }
     }
 }

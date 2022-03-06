@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Crypto_WebApplication.Models
@@ -14,42 +15,30 @@ namespace Crypto_WebApplication.Models
 
     public partial class Data
     {
-        public List<Currency> Currencies { get; set; }
         public List<Market> Markets { get; set; }
-    }
-
-    public partial class Currency
-    {
-        public long Id { get; set; }
-        public string Uuid { get; set; }
-        public string Type { get; set; }
-        public Uri IconUrl { get; set; }
-        public string Name { get; set; }
-        public string Symbol { get; set; }
-        public string Sign { get; set; }
     }
 
     public partial class Market
     {
-        public long Id { get; set; }
         public string Uuid { get; set; }
         public long Rank { get; set; }
-        public string BaseSymbol { get; set; }
-        public string QuoteSymbol { get; set; }
-        public string SourceName { get; set; }
-        public Uri SourceIconUrl { get; set; }
-        public long TickerCreatedAt { get; set; }
-        public double TickerClose { get; set; }
-        public double? TickerBaseVolume { get; set; }
-        public double TickerQuoteVolume { get; set; }
-        public double MarketShare { get; set; }
-        public double Price { get; set; }
-        public double Volume { get; set; }
+        public Base Base { get; set; }
+        public Base Quote { get; set; }
+        public Exchange Exchange { get; set; }
+        public string MarketShare { get; set; }
+        public string BtcPrice { get; set; }
+        public bool Recommended { get; set; }
+        public string Price { get; set; }
+
+        [JsonPropertyName("24hVolume")]
+        public string The24HVolume { get; set; }
     }
 
     public partial class Stats
     {
-        public double Volume { get; set; }
+
+        [JsonPropertyName("24hVolume")]
+        public string The24HVolume { get; set; }
     }
 
 }

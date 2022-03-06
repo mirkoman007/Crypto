@@ -16,7 +16,7 @@ namespace Crypto_WebApplication.Models
         public long TotalCoins { get; set; }
         public long TotalMarkets { get; set; }
         public long TotalExchanges { get; set; }
-        public double TotalMarketCap { get; set; }
-        public double Total24HVolume { get; set; }
+        public string TotalMarketCap { get; set; }
+        public string Total24HVolume { get; set; }
     }
 }

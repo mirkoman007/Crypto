@@ -17,9 +17,9 @@ namespace Crypto_WebApplication.Controllers
             ViewBag.coins = coins;
             return View();
         }
-        public IActionResult Coin(int id)
+        public IActionResult Coin(string uuid)
         {
-            Coin coin = API.GetCoin(id);
+            Coin coin = API.GetCoin(uuid);
             ViewBag.coin = coin;
             return View();
         }  

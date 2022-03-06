@@ -30,9 +30,9 @@ namespace Crypto_WebApplication.DAL
             return coins;
         }
 
-        internal static Coin GetCoin(int id)
+        internal static Coin GetCoin(string uuid)
         {
-            RestClient restClient = new RestClient($"https://coinranking1.p.rapidapi.com/coin/{id}");
+            RestClient restClient = new RestClient($"https://coinranking1.p.rapidapi.com/coin/{uuid}");
             IRestResponse restResponse = restClient.Execute(Request());
             Coin coin = JsonSerializer.Deserialize<Coin>(restResponse.Content, options);
 
@@ -50,7 +50,7 @@ namespace Crypto_WebApplication.DAL
 
         internal static Exchanges GetExchanges()
         {
-            RestClient restClient = new RestClient("https://coinranking1.p.rapidapi.com/exchanges");
+            RestClient restClient = new RestClient("https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/exchanges");
             IRestResponse restResponse = restClient.Execute(Request());
             Exchanges exchanges = JsonSerializer.Deserialize<Exchanges>(restResponse.Content, options);
 
@@ -58,7 +58,7 @@ namespace Crypto_WebApplication.DAL
         }
         internal static Markets GetMarkets()
         {
-            RestClient restClient = new RestClient("https://coinranking1.p.rapidapi.com/markets");
+            RestClient restClient = new RestClient("https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/markets");
             IRestResponse restResponse = restClient.Execute(Request());
             Markets markets = JsonSerializer.Deserialize<Markets>(restResponse.Content, options);
 
